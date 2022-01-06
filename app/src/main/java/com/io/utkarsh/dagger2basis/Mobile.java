@@ -21,6 +21,7 @@ public class Mobile {
     }
 
     public void run() {
+        processor.start();
         Log.e("Mobile Object", "it is running");
     }
 

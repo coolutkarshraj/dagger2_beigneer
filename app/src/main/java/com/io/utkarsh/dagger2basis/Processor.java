@@ -2,9 +2,7 @@ package com.io.utkarsh.dagger2basis;
 
 import javax.inject.Inject;
 
-public class Processor {
+public interface Processor {
 
-    @Inject public Processor(){
-
-    }
+    void start();
 }

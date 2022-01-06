@@ -1,8 +1,10 @@
 package com.io.utkarsh.dagger2basis.component;
 
 import com.io.utkarsh.dagger2basis.MainActivity;
+import com.io.utkarsh.dagger2basis.Mediatek;
 import com.io.utkarsh.dagger2basis.Mobile;
 import com.io.utkarsh.dagger2basis.module.BatteryModule;
+import com.io.utkarsh.dagger2basis.module.SnapDragonModule;
 
 import dagger.Component;
 
@@ -13,7 +15,7 @@ import dagger.Component;
 * AND WHAT IS THE DEPENDECIES GRAPH ALL things handle
 * */
 
-@Component(modules = BatteryModule.class)
+@Component(modules = {BatteryModule.class, SnapDragonModule.class})
 public interface MobileComponent {
 
 
