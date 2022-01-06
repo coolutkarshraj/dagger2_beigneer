@@ -54,9 +54,10 @@ public class MainActivity extends AppCompatActivity {
         //use field injection but if we are not using then we need to create methods
         // in component class by providing activity name
 
-        MobileComponent component = DaggerMobileComponent.builder().setClockeSpeed(10)
-                .setCore(3)
-               .build();
+//        MobileComponent component = DaggerMobileComponent.builder().setClockeSpeed(10)
+//                .setCore(3)
+//               .build();
+        MobileComponent component = DaggerMobileComponent.factory().create(10,15,3);
         component.inject(this);
         mobile.run();
     }

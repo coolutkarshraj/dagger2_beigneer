@@ -11,12 +11,14 @@ public class Mobile {
 
     private Battery battery;
     private final Processor processor;
+    private Camera camera;
 
     @Inject
-    public Mobile(Battery battery, Processor processor) {
+    public Mobile(Battery battery, Processor processor,Camera camera) {
         this.processor = processor;
         Log.e(TAG, "Mobile: Constructor");
         this.battery = battery;
+        this.camera = camera;
 
     }
 
