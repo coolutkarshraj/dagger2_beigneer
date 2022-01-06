@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         MobileComponent component = DaggerMobileComponent.create();
+        //if we are using constructor inject in our class then we can directly
+        //use field injection but if we are not using then we need to create methods
+        // in component class by providing activity name
         component.inject(this);
         mobile.run();
     }
