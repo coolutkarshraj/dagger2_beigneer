@@ -2,6 +2,7 @@ package com.io.utkarsh.dagger2basis.component;
 
 import com.io.utkarsh.dagger2basis.MainActivity;
 import com.io.utkarsh.dagger2basis.Mobile;
+import com.io.utkarsh.dagger2basis.module.BatteryModule;
 
 import dagger.Component;
 
@@ -12,7 +13,7 @@ import dagger.Component;
 * AND WHAT IS THE DEPENDECIES GRAPH ALL things handle
 * */
 
-@Component
+@Component(modules = BatteryModule.class)
 public interface MobileComponent {
 
 
