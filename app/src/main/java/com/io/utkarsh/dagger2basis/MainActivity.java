@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
 //        MobileComponent component = DaggerMobileComponent.builder().setClockeSpeed(10)
 //                .setCore(3)
 //               .build();
-        MobileComponent component = DaggerMobileComponent.factory().create(10,15,3);
+      //  MobileComponent component = DaggerMobileComponent.factory().create(10,15,3);
+        MobileComponent component = ((Application)getApplication()).getComponent();
         component.inject(this);
         mobile.run();
     }

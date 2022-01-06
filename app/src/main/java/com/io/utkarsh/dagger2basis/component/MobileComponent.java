@@ -6,6 +6,7 @@ import com.io.utkarsh.dagger2basis.module.BatteryModule;
 import com.io.utkarsh.dagger2basis.module.MediatekModule;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
@@ -16,7 +17,7 @@ import dagger.Component;
  * HOW OBJECT HAS BEEN CREATED
  * AND WHAT IS THE DEPENDECIES GRAPH ALL things handle
  * */
-
+@Singleton
 @Component(modules = {BatteryModule.class, MediatekModule.class})
 public interface MobileComponent {
 

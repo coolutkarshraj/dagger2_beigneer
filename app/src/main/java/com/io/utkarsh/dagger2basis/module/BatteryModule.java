@@ -5,6 +5,8 @@ import com.io.utkarsh.dagger2basis.Battery;
 import com.io.utkarsh.dagger2basis.Cobalt;
 import com.io.utkarsh.dagger2basis.Lithium;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -18,6 +20,7 @@ import dagger.Provides;
 * which will tell the dagger that how dagger will create the  object of the class
 *
 * */
+
 @Module
 public class BatteryModule {
 
@@ -32,6 +35,7 @@ public class BatteryModule {
         return lithium;
     }
 
+    @Singleton
     @Provides
     Battery getBattery(Lithium lithium,Cobalt cobalt){
         return new Battery(cobalt,lithium);
