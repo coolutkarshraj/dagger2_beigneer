@@ -4,8 +4,12 @@ import com.io.utkarsh.dagger2basis.MainActivity;
 import com.io.utkarsh.dagger2basis.Mediatek;
 import com.io.utkarsh.dagger2basis.Mobile;
 import com.io.utkarsh.dagger2basis.module.BatteryModule;
+import com.io.utkarsh.dagger2basis.module.MediatekModule;
 import com.io.utkarsh.dagger2basis.module.SnapDragonModule;
 
+import javax.inject.Named;
+
+import dagger.BindsInstance;
 import dagger.Component;
 
 
@@ -15,7 +19,7 @@ import dagger.Component;
 * AND WHAT IS THE DEPENDECIES GRAPH ALL things handle
 * */
 
-@Component(modules = {BatteryModule.class, SnapDragonModule.class})
+@Component(modules = {BatteryModule.class, MediatekModule.class})
 public interface MobileComponent {
 
 
@@ -30,4 +34,16 @@ public interface MobileComponent {
     * For Field injection
     * */
     void inject(MainActivity mainActivity);
+
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        Builder setClockeSpeed(@Named("clockSpeed") int clockeSpeed);
+
+        @BindsInstance
+         Builder setCore(@Named("Core") int core);
+
+        MobileComponent build();
+
+    }
 }

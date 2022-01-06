@@ -10,7 +10,7 @@ public class Snapdragon implements Processor{
 
     int clockSpeed;
 
-     public Snapdragon(int clockSpeed) {
+     @Inject public Snapdragon(int clockSpeed) {
          this.clockSpeed = clockSpeed;
         Log.e(TAG, "Snapdragon: " );
     }

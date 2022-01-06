@@ -48,11 +48,15 @@ public class MainActivity extends AppCompatActivity {
         //here you can see battery module so which is deprecated so if we want to
         // hide we need to make class abstract if we are not using any instance variable
         //and also all methods are static
-        MobileComponent component = DaggerMobileComponent.builder()
-                .snapDragonModule(new SnapDragonModule(10)).build();
+//        MobileComponent component = DaggerMobileComponent.builder()
+//                .snapDragonModule(new SnapDragonModule(10)).build();
         //if we are using constructor inject in our class then we can directly
         //use field injection but if we are not using then we need to create methods
         // in component class by providing activity name
+
+        MobileComponent component = DaggerMobileComponent.builder().setClockeSpeed(10)
+                .setCore(3)
+               .build();
         component.inject(this);
         mobile.run();
     }
