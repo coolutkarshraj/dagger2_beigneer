@@ -2,6 +2,7 @@ package com.io.utkarsh.dagger2basis.module;
 
 import com.io.utkarsh.dagger2basis.Mediatek;
 import com.io.utkarsh.dagger2basis.Processor;
+import com.io.utkarsh.dagger2basis.scopes.FragmentScope;
 
 import dagger.Binds;
 import dagger.Module;
@@ -19,6 +20,7 @@ public abstract class MediatekModule {
      * call them. Making your @Provides method static will also accomplish this,
      * but your @Provides method will still compile if you forget the static.
      * @Binds methods will not.*/
+    @FragmentScope
     @Binds
     abstract Processor getProcessor(Mediatek mediatek);
 }

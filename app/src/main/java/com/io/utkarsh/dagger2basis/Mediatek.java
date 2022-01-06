@@ -19,7 +19,7 @@ import javax.inject.Singleton;
 *
 * */
 
-@Singleton
+
 public class Mediatek implements Processor {
     int clockSpeed;
     int core;

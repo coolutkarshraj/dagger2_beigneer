@@ -1,22 +1,30 @@
 package com.io.utkarsh.dagger2basis;
 
-import com.io.utkarsh.dagger2basis.component.DaggerMobileComponent;
-import com.io.utkarsh.dagger2basis.component.MobileComponent;
+import com.io.utkarsh.dagger2basis.component.ApplicationComponent;
+import com.io.utkarsh.dagger2basis.component.DaggerApplicationComponent;
 
 
 //we will define component in we want Componect create object once then go for application class
 public class Application extends android.app.Application {
-    MobileComponent component;
+
+    ApplicationComponent applicationComponent;
+    Camera camera1,camera2;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        component = DaggerMobileComponent.factory().create(10,15,3);
+        applicationComponent = DaggerApplicationComponent
+                .builder()
+                .setMegaPixel(90)
+                .build();
+
+        camera1 = applicationComponent.getCamera();
+        camera2 = applicationComponent.getCamera();
+
 
     }
-    public MobileComponent getComponent(){
-        return component;
+
+    public ApplicationComponent getApplication() {
+        return applicationComponent;
     }
-
-
 }

@@ -4,6 +4,7 @@ package com.io.utkarsh.dagger2basis.module;
 import com.io.utkarsh.dagger2basis.Battery;
 import com.io.utkarsh.dagger2basis.Cobalt;
 import com.io.utkarsh.dagger2basis.Lithium;
+import com.io.utkarsh.dagger2basis.scopes.ActivityScope;
 
 import javax.inject.Singleton;
 
@@ -34,8 +35,7 @@ public class BatteryModule {
         lithium.done();
         return lithium;
     }
-
-    @Singleton
+    @ActivityScope
     @Provides
     Battery getBattery(Lithium lithium,Cobalt cobalt){
         return new Battery(cobalt,lithium);
